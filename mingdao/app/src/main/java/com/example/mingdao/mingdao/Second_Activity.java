@@ -26,25 +26,28 @@ public class Second_Activity extends Activity {
     String api = "https://api.mingdao.com/post/v2/all?format=json";
     StringBuilder urlis = new StringBuilder(api);
     Login login;
+    DongTai dongtai;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second);
         Intent intent = getIntent();
-        String data = intent.getStringExtra("extra_data");
+        final String data = intent.getStringExtra("extra_data");
 
 
 
         login = JsonUtil.parseJSONWithGSON(Second_Activity.this, data,Login.class);
         String access_token = new String(login.getAccess_token());
         urlis.append("&access_token=" + access_token);
-        Log.d("main",urlis.toString());
+
         InternnetConnect internnetConnect = new InternnetConnect();
         internnetConnect.sendRequestWithHttpURLConnection(urlis.toString(), new ResponseListener() {
             @Override
             public void success(final String response) {
-                result.setText(response);
+                Log.d("main",response);
+                dongtai = JsonUtil.parseJSONWithGSON(Second_Activity.this,response,DongTai.class);
+                result.setText(dongtai.getPosts().get(2).getDetails().get(0).getThumbnail_pic());
 
 
             }
