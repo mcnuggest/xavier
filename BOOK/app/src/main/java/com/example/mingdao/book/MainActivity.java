@@ -66,7 +66,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private TextView duanju;
     private ListView list;
     App app;
-    //    private List<Duanju> duanjuList = new ArrayList<Duanju>();
     private List<App.Web> data;
 
 
