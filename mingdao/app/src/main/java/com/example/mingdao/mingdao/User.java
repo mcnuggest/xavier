@@ -31,4 +31,23 @@ public class User {
     private String avatar;
     private String id;
     private String name;
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    private String job;
+    private String department;
 }

@@ -125,7 +125,7 @@ public class Adapter extends BaseAdapter {
             holder.time.setText(minutes + "分钟前");
         } else if (hours < 24) {
             holder.time.setText(hours + "小时前");
-        } else if (days <= 30) {
+        } else if (days < 31) {
             holder.time.setText(days + "天前");
         } else {
             holder.time.setText(post.getCreate_time());
