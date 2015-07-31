@@ -30,7 +30,7 @@ public class User {
 
     // private String avatar;
     // private String id;
-    // private String name;
+     private String name3;
 
     public String getJob() {
         return job;
