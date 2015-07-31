@@ -12,7 +12,7 @@ public class Group {
         this.avatar = avatar;
     }
 
-    public String getId() {
+    public String getId(String s) {
         return id;
     }
 

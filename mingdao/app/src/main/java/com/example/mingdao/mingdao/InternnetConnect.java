@@ -21,7 +21,7 @@ import java.net.URL;
  * Created by mingdao on 15/7/24.
  */
 public class InternnetConnect {
-    public void sendRequestWithHttpURLConnection(final String url1, final ResponseListener responseListener) {
+    public static void sendRequestWithHttpURLConnection(final String url1, final ResponseListener responseListener) {
         new Thread(new Runnable() {
             @Override
             public void run() {
