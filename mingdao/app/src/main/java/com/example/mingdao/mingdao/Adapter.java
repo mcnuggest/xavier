@@ -94,7 +94,7 @@ public class Adapter extends BaseAdapter {
         final Post post = posts.get(position);
         String imageurl = post.getUser().getAvatar();
         ImageLoader.getInstance().displayImage(imageurl, holder.avatar, options);
-        At.At(post.getText(),context,holder.text);
+        At.At(post.getText(), context, holder.text);
         /*holder.text.setText(At.At(post.getText(), context));*/
         holder.name.setText(post.getUser().getName());
         holder.name.setClickable(true);
@@ -108,12 +108,6 @@ public class Adapter extends BaseAdapter {
                 context.startActivity(it);
             }
         });
-
-
-
-
-
-
         timediff = DataUtilJudge.DataUtilJudge(post.getCreate_time());
         days = hours / 24;
         hours = timediff / 60 / 60;
@@ -133,20 +127,19 @@ public class Adapter extends BaseAdapter {
         int likenumber = Integer.parseInt(post.getLike_count());
         holder.source.setText(post.getSource());
         holder.like.setText(post.getLike_count());
-        likenumber = likenumber+1;
+        likenumber = likenumber + 1;
         final int finalLikenumber = likenumber;
         holder.likeimage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 holder.like.setText(finalLikenumber + "");
-                likeIt.LikeIt(context,post.getGuid());
+                likeIt.LikeIt(context, post.getGuid());
             }
         });
 
         return convertView;
 
     }
-
 
 
     class ViewHolder {
